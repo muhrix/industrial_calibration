@@ -46,12 +46,16 @@ ENDIF (CERES_FOUND)
 ## Generate services in the 'srv' folder
  add_service_files(
    FILES
+   calibrate.srv
+   camera_observer_trigger.srv
+   covariance.srv
    get_mutable_joint_states.srv
    set_mutable_joint_states.srv
    store_mutable_joint_states.srv
+   user_accept.srv
  )
 
-add_action_files(DIRECTORY action FILES manual_trigger.action robot_joint_values_trigger.action robot_pose_trigger.action)
+add_action_files(DIRECTORY action FILES calibration.action manual_target_location.action manual_trigger.action robot_joint_values_trigger.action robot_pose_trigger.action)
 
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
